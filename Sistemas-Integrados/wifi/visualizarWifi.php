@@ -1,15 +1,15 @@
 ﻿<html>
 <meta charset="UTF-8">
 <head>
-<LINK REL="SHORTCUT ICON" href="imagens/logo.png">
-<link href="./styles/tabela.css" rel="stylesheet" type="text/css">
+<LINK REL="SHORTCUT ICON" href="../imagens/logo.png">
+<link href="../styles/tabela.css" rel="stylesheet" type="text/css">
 <script src="https://kit.fontawesome.com/959cbca264.js" crossorigin="anonymous"></script>
 
 <title>Listagem de Wifi</title>
 </head>
 <body>
 	<div class="inicial">
-		<img src="imagens/logo.png"/>
+		<img src="../imagens/logo.png"/>
 
 		<p>
 			<form action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -51,7 +51,7 @@ $parametro = filter_input(INPUT_GET, "parametro");
 $strcon = mysqli_connect($servidor, $usuario, $senha, $dbname) or die ('Erro ao conectar ao banco de dados');
 
 if($parametro){
-$sql = "SELECT * from wifi where nome like ucase('%$parametro%') order by ID asc";
+$sql = "SELECT * from wifi where nome like ucase('%$parametro%') or setorleito like ucase('%$parametro%') or aparelho like ucase('%$parametro%') order by ID asc";
 $total_registros = "5000";
 }
 else{
@@ -130,7 +130,7 @@ echo "</div>";
 ?>
 
 <a href="cadastrarWifi.php"><input type="button" value="Cadastrar Wifi" class="botao"></a>
-<a href="escolha.php"><input type="button" value="Voltar" class="botao"></a>
+<a href="../escolha.php"><input type="button" value="Voltar Sistemas" class="botao"></a>
 
 </div>
 </body>

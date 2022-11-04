@@ -17,7 +17,8 @@ echo $login;
     <div class="inicial">
         <img src="imagens/logo.png"/>
         <h3>Escolha uma das opções</h3>
-        <a href="visualizarWifi.php"><input type="button" value="Listagem de Wifi" class="botao"></a>
+        <a href="wifi/visualizarWifi.php"><input type="button" value="Listagem de Wifi" class="botao"></a>
+        <a href="http://intranet.iec.net/estoque/visualizar.php"><input type="button" value="Estoque" class="botao"></a>
         <!-- <a href="visualizar.php"><input type="button" value="Visualizar Inventário" class="botao"></a> -->
         <!-- <a href="cadastrarproduto.php"><input type="button" value="Cadastrar Equip" class="botao"></a> -->
         <!-- <a href="editarproduto.php?login=".$login><input type="button" value="Editar Equip" class="botao"></a> -->
@@ -26,8 +27,5 @@ echo $login;
 </div>
 </div>
 
-<?php 
-// include("config.php");
-?>
     </body>
 </html>

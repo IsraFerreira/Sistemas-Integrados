@@ -29,15 +29,15 @@ $dadowifi = mysqli_query($conn, $dadoswifi)
 <html>
     <meta charset="UTF-8">
     <head>
-        <LINK REL="SHORTCUT ICON" href="imagens/imagem2.jpg">
-        <link href="styles/css.css" rel="stylesheet" type="text/css">
+        <LINK REL="SHORTCUT ICON" href="../imagens/imagem2.jpg">
+        <link href="../styles/css.css" rel="stylesheet" type="text/css">
         <title> Confirmação de Cadastro </title>
     </head>
     <body>
         <div class="total">
             <div class="inicial">
                 <h3>Wifi Cadastrado com Sucesso!</h3>
-                <img src="./imagens/logo.png" alt="Logo Cérebro">
+                <img src="../imagens/logo.png" alt="Logo Cérebro">
                 <form>
                     <a href="visualizarWifi.php"><input type="button" value="Ver Lista Wifi" class="botao"></a>
                     <a href="cadastrarWifi.php"><input type="button" value="Cadastrar Novamente" class="botao"></a>

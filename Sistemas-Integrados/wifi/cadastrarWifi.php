@@ -5,15 +5,15 @@ include("connection.php");
 <html>
     <meta charset="UTF-8">
     <head>
-    <LINK REL="SHORTCUT ICON" href="imagens/logo.png">
-        <link href="styles/css.css" rel="stylesheet" type="text/css">
+    <LINK REL="SHORTCUT ICON" href="../imagens/logo.png">
+        <link href="../styles/css.css" rel="stylesheet" type="text/css">
         <title>Cadastrar Wifi</title>
     </head>
 
     <body>
         <div class="total">
             <div class="inicial">
-                <img src="imagens/logo.png"/>
+                <img src="../imagens/logo.png"/>
                 <h3>Cadastre Novo Wifi</h3>
 
                 <form action="dadosWifi.php" method="post"> 

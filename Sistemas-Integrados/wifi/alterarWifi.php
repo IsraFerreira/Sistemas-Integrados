@@ -1,14 +1,14 @@
 ﻿<html>
      <meta charset="UTF-8">
      <head>
-     <LINK REL="SHORTCUT ICON" href="imagens/logo.png">
-          <link href="styles/css.css" rel="stylesheet" type="text/css">
+     <LINK REL="SHORTCUT ICON" href="../imagens/logo.png">
+          <link href="../styles/css.css" rel="stylesheet" type="text/css">
           <title>Edição de Equipamento</title>
      </head>
      <body>
           <div class="total">
                <div class="inicial">
-                    <img src="imagens/logo.png"/>
+                    <img src="../imagens/logo.png"/>
 
 <?php
 include("connection.php");
