@@ -1,0 +1,168 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+  
+    --cor1: #A6EBC9;
+    --cor2: #61FF7E;
+    --cor3: #5EEB5B;
+    --cor4: #62AB37;
+    --cor5: #393424;
+
+    --corTabela1: rgb(227, 253, 233);
+    --corTabela2: rgb(163, 231, 146);
+  }
+
+html{
+    background: -webkit-gradient(linear, left top, right top, from(var(--cor1)), to(var(--cor5)));
+    background: -moz-linear-gradient(left, --cor1, --cor5);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=var(--cor1), EndColorStr=var(--cor5));   
+}
+
+body{
+  	font: 12px auto trebuchet ms,Verdana,Arial,Helvetica,sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+  div.inicial{
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.479);
+    color: rgb(44, 44, 44);
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 10px;
+  }
+
+  div.inicial img {
+    width: 180px;
+    height: 180px;
+  }
+
+
+  h3 {
+    padding: 20px;
+  }
+  
+  .botao {
+    font-size: 15px;
+    width: 150px;
+    padding: 15px 10px;
+    border: 3px solid var(--cor4);
+    border-radius: 10px;
+    background-color: var(--cor2);
+    cursor: pointer;
+  }
+
+  .botaoFiltro {
+    font-size: 15px;
+    width: 100px;
+    padding: 10px 5px;
+    border: 3px solid var(--cor4);
+    border-radius: 10px;
+    background-color: var(--cor2);
+    cursor: pointer;
+  }
+
+  .filtro {
+    width: 150px;
+    font-size: 15px;
+  }
+
+
+table{
+    border: 2px solid black;
+    padding: 0px;
+    margin: 0px;
+}
+
+th{
+    background: var(--cor5);
+    color: rgba(241, 241, 241, 0.945);
+    font-size: 15px;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+tr{
+    background: var(--corTabela2);
+}
+
+tr:nth-child(even) {
+    background: var(--corTabela1);
+}
+
+tr:hover{
+    background: var(--cor5);
+    color: white;
+}
+
+tr:hover > td > a {
+  color: white;
+}
+
+
+td{
+    font-size: 15px;
+    padding: 5px;
+
+}
+
+td > a {
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+
+td > a > i {
+  padding: 0px 15px;
+}
+
+#icone1 {
+  color: rgb(85, 155, 96);
+  transition: background 0.5s;
+}
+
+#icone1:hover {
+  background: white;
+  border-radius: 15px;
+}
+
+#icone2 {
+  color: rgb(255, 70, 70);
+  transition: background 0.5s;
+}
+
+#icone2:hover {
+  background: white;
+  border-radius: 15px;
+}
+
+.bloqueado{
+  cursor: not-allowed;  
+}
+
+.marcador{
+  width: max-content;
+  padding: 5px;
+}
+
+.marcador > h4 {
+  color: var(--cor5);
+  font-size: 15px;
+}
+
+.marcador > a {
+  text-decoration: none;
+  font-size: 15px;
+  color: var(--cor4);
+}
+
