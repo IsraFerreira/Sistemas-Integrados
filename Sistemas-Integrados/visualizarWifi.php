@@ -32,7 +32,7 @@ echo "<th> ID </th>";
 echo "<th> Nome </th>";
 echo "<th> Setor/Leito </th>";
 echo "<th> Aparelho </th>";
-echo "<th> Tempo </th>";
+echo "<th> Dias </th>";
 echo "<th> Ações </th>";
 echo "</tr>";
 
@@ -95,7 +95,7 @@ while ($registro = mysqli_fetch_array($resultado))
 	echo "<td>".$rid."</td>";
     echo "<td>".$rnome."</td>";
 	echo "<td>".$rsetorleito."</td>";
-	echo "<td>".$rsetorleito."</td>";
+	echo "<td>".$raparelho."</td>";
 	echo "<td>".round($rdiasnafila)."</td>";
 	echo "<td><a href='alterarWifi.php?id=".$rid."&nome=".$rnome."&setorleito=".$rsetorleito."&aparelho=".$raparelho."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
 	echo "<a href='apagarWifi.php?id=".$rid."&nome=".$rnome."&setorleito=".$rsetorleito."&aparelho=".$raparelho."'><i class='fa-solid fa-trash' id='icone2'></i></a></td>";
