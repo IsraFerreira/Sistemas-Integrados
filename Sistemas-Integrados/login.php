@@ -18,7 +18,7 @@ include("connection.php");
 $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
 $hora = date('Y-m-d H:i:s'); // Salva a data e hora atual (formato MySQL)
 $visita = mysql_escape_string($visita);
-$visita = "Nova entrada no Inventario";
+$visita = "Nova entrada no Sistema Integrado";
 
 
 // Monta a query para inserir o log no sistema

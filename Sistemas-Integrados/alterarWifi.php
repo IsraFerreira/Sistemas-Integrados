@@ -16,22 +16,22 @@ include("connection.php");
 
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
 $nome = filter_input(INPUT_GET, 'nome', FILTER_SANITIZE_STRING);
-$quantidade = filter_input(INPUT_GET, 'quantidade', FILTER_SANITIZE_STRING);
-$preco = filter_input(INPUT_GET, 'preco', FILTER_SANITIZE_STRING);
+$setorleito = filter_input(INPUT_GET, 'setorleito', FILTER_SANITIZE_STRING);
+$aparelho = filter_input(INPUT_GET, 'aparelho', FILTER_SANITIZE_STRING);
 
 
 ?>
 
-                    <h3>Atualizar dados do Equipamento</h3>
-                    <form action="inserir.php" method="post">
-                         ID:
+                    <h3>Atualizar dados do Wifi</h3>
+                    <form action="inserirWifi.php" method="post">
+                         <label class="editavel">ID:</label>
                          <input type="int" name="id2" placeholder="ID" value="<?php echo $id; ?>" readonly="true" class="bloqueado"> <br><br>
                          <label class="editavel" id="editavel1">Nome:</label>
                          <input type="text" name="nome2" placeholder="Nome" value="<?php echo $nome; ?>" class="editavel" /> <br><br>
-                         <label class="editavel">Quantidade:</label>
-                         <input type="int" name="quantidade2" value="<?php echo $quantidade; ?>" class="editavel" /><h5>Não dê saída / entrada por aqui</h5><br>
-                         <label class="editavel">Preço R$:</label>
-                         <input type="text" name="preco2" value="<?php echo $preco; ?>" class="editavel" /><br><br>
+                         <label class="editavel">Setor / Leito:</label>
+                         <input type="text" name="setorleito2" value="<?php echo $setorleito; ?>" class="editavel" /><br><br>
+                         <label class="editavel">Aparelho:</label>
+                         <input type="text" name="aparelho2" value="<?php echo $aparelho; ?>" class="editavel" /><br><br>
                          <input type="submit" value="Atualizar" class="botao">
                     </form>
                </div>
