@@ -56,8 +56,8 @@ form {
 
 #formLogin {
   display: grid;
-  width: 50px;
-  height: 180px;
+  width: fit-content;
+  height: fit-content;
   grid-template-areas:
     "loginLBL loginInput"
     "senhaLBL senhaInput";
@@ -85,8 +85,8 @@ form {
   text-align: left;
 }
 
-div #botao{
- width: 320%;
+div #botao {
+  width: 270%;
 }
 
 h3 {
@@ -103,28 +103,51 @@ h3 {
   cursor: pointer;
 }
 
-.editavel{
+.editavel {
   background: var(--cor5);
   color: var(--corTabela1);
   padding: 10px;
 }
 
-#editavel1{
+#editavel1 {
   padding-right: 30px;
 }
 
-.bloqueado{
-  cursor: not-allowed;  
+.bloqueado {
+  cursor: not-allowed;
 }
 
 h5 {
-  color:red;
+  color: red;
   font-size: 10px;
 }
 
-#configuracao{
+#configuracao {
   float: left;
   /* float: right; */
+}
+
+.sessao {
+  display: flex;
+  background-color: var(--cor1);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sessao>h4{
+  font-size: 14px;
+}
+
+.sessao>a>.botaoSessao {
+  font-size: 13px;
+  width: fit-content;
+  height: 20px;
+  border: 3px solid var(--cor4);
+  border-radius: 5px;
+  background-color: var(--cor2);
+  cursor: pointer;
+  margin: 0px 10px;
 }
 
 

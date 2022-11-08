@@ -1,8 +1,15 @@
 ﻿<?php
 include("connection.php");
+session_start();
+$logged = $_SESSION['logged'];
 
-$login = filter_input(INPUT_GET, "login");
-echo $login;
+if($logged != true){ 
+    echo"<script language='javascript' type='text/javascript'>alert('É necessário fazer o login primeiro');window.location.href='../login.html';</script>";  
+}
+else {
+    include("session.php");
+}
+
 
 $id = $_POST['id2'];
 $nome = $_POST['nome2'];

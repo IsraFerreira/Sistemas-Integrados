@@ -1,33 +1,42 @@
-﻿<?php 
-include("connection.php");
- 
-$login = $_POST['login'];
-$senhaCadastro = MD5($_POST['senha']);
-$connect = mysql_connect($servidor, $usuario, $senha);
-$db = mysql_select_db($dbname);
-$query_select = "SELECT login FROM usuarios WHERE login = '$login'";
-$select = mysql_query($query_select,$connect);
-$array = mysql_fetch_array($select);
-$logarray = $array['login'];
- 
-  if($login == "" || $login == null){
-    echo"<script language='javascript' type='text/javascript'>alert('O campo login deve ser preenchido');window.location.href='cadastro.html';</script>";
- 
-    }else{
-      if($logarray == $login){
- 
-        echo"<script language='javascript' type='text/javascript'>alert('Esse login já existe');window.location.href='cadastro.html';</script>";
-        die();
- 
-      }else{
-        $query = "INSERT INTO usuarios (login,senha) VALUES ('$login','$senhaCadastro')";
-        $insert = mysql_query($query,$connect);
-         
-        if($insert){
-          echo"<script language='javascript' type='text/javascript'>alert('Usuário cadastrado com sucesso!');window.location.href='login.html'</script>";
-        }else{
-          echo"<script language='javascript' type='text/javascript'>alert('Não foi possível cadastrar esse usuário');window.location.href='cadastro.html'</script>";
-        }
-      }
-    }
+﻿<?php
+session_start();
+$logged = $_SESSION['logged'];
+
+if($logged != true){ 
+    echo"<script language='javascript' type='text/javascript'>alert('É necessário fazer o login primeiro');window.location.href='login.html';</script>";  
+}
+
 ?>
+<html>
+<meta charset="UTF-8">
+
+<head>
+    <LINK REL="SHORTCUT ICON" href="imagens/logo.png">
+    <link href="styles/css.css" rel="stylesheet" type="text/css">
+    <title>Cadastro no Inventário</title>
+</head>
+
+<body>
+    <div class="total">
+        <div class="inicial">
+        <?php include("session.php"); ?>
+            <img src="imagens/logo.png" />
+            <h3>Entre com os dados a serem cadastrados no Inventário</h3>
+
+            <form method="POST" action="cadastroRealizado.php" id="formLogin">
+                <label id="loginLBL">Login:</label>
+                <input type="text" name="login" id="loginInput">
+                <label id="senhaLBL">Senha:</label>
+                <input type="password" name="senha" id="senhaInput">
+                <div id="botao">
+                    <input type="submit" value="Cadastrar" id="cadastrar" name="cadastrar" class="botao">
+                    <a href="index.html">
+                        <input type="button" value="Voltar" id="voltar" name="voltar" class="botao">
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

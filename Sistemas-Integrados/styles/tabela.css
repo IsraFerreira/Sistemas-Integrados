@@ -166,3 +166,25 @@ td > a > i {
   color: var(--cor4);
 }
 
+.sessao {
+  display: flex;
+  background-color: var(--cor1);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sessao>h4{
+  font-size: 14px;
+}
+
+.sessao>a>.botaoSessao {
+  font-size: 13px;
+  width: 40px;
+  height: 20px;
+  border: 3px solid var(--cor4);
+  border-radius: 5px;
+  background-color: var(--cor2);
+  cursor: pointer;
+  margin: 0px 10px;
+}

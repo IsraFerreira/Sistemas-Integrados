@@ -1,8 +1,12 @@
 ﻿<?php
 include("connection.php");
+session_start();
+$logged = $_SESSION['logged'];
 
-$login = filter_input(INPUT_GET, "login");
-echo $login;
+if($logged != true){ 
+    echo"<script language='javascript' type='text/javascript'>alert('É necessário fazer o login primeiro');window.location.href='../login.html';</script>";  
+}
+
 
 $login = $_POST['login'];
 $nome = $_POST['nome'];
@@ -36,6 +40,7 @@ $dadowifi = mysqli_query($conn, $dadoswifi)
     <body>
         <div class="total">
             <div class="inicial">
+            <?php include("session.php"); ?>
                 <h3>Wifi Cadastrado com Sucesso!</h3>
                 <img src="../imagens/logo.png" alt="Logo Cérebro">
                 <form>

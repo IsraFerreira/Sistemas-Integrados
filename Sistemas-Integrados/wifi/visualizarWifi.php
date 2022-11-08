@@ -1,4 +1,15 @@
-﻿<html>
+﻿<?php
+include("connection.php");
+session_start();
+$logged = $_SESSION['logged'];
+
+if($logged != true){ 
+    echo"<script language='javascript' type='text/javascript'>alert('É necessário fazer o login primeiro');window.location.href='../login.html';</script>";  
+}
+
+?>
+
+<html>
 <meta charset="UTF-8">
 <head>
 <LINK REL="SHORTCUT ICON" href="../imagens/logo.png">
@@ -9,6 +20,7 @@
 </head>
 <body>
 	<div class="inicial">
+	<?php include("session.php"); ?>
 		<img src="../imagens/logo.png"/>
 
 		<p>
@@ -20,11 +32,6 @@
 
 
 <?php
-include("connection.php");
-
-$login = filter_input(INPUT_GET, "login");
-echo $login;
-
 //criando tabela e o cabeçalho de dados:
 echo "<table>";
 echo "<tr>";

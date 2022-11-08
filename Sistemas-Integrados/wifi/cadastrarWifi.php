@@ -1,5 +1,12 @@
 ﻿<?php
 include("connection.php");
+session_start();
+$logged = $_SESSION['logged'];
+
+if($logged != true){ 
+    echo"<script language='javascript' type='text/javascript'>alert('É necessário fazer o login primeiro');window.location.href='../login.html';</script>";  
+}
+
 ?>
 
 <html>
@@ -13,6 +20,7 @@ include("connection.php");
     <body>
         <div class="total">
             <div class="inicial">
+                <?php include("session.php"); ?>
                 <img src="../imagens/logo.png"/>
                 <h3>Cadastre Novo Wifi</h3>
 
