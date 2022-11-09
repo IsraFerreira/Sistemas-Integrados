@@ -6,7 +6,6 @@ $logged = $_SESSION['logged'];
 if($logged != true){ 
     echo"<script language='javascript' type='text/javascript'>alert('É necessário fazer o login primeiro');window.location.href='../login.html';</script>";  
 }
-
 ?>
 
 <html>
