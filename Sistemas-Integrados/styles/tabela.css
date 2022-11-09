@@ -52,7 +52,7 @@ body{
   
   .botao {
     font-size: 15px;
-    width: 150px;
+    width: fit-content;
     padding: 15px 10px;
     border: 3px solid var(--cor4);
     border-radius: 10px;
