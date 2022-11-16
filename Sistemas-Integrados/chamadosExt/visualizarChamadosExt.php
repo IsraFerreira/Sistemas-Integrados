@@ -57,11 +57,11 @@ $parametro = filter_input(INPUT_GET, "parametro");
 $strcon = mysqli_connect($servidor, $usuario, $senha, $dbname) or die ('Erro ao conectar ao banco de dados');
 
 if($parametro){
-$sql = "SELECT * from chamadosExt where empresa like ucase('%$parametro%') or resolvido like ucase('%$parametro%') or solicitacao like ucase('%$parametro%') order by ID asc";
+$sql = "SELECT * from chamadosExt where empresa like ucase('%$parametro%') or resolvido like ucase('%$parametro%') or solicitacao like ucase('%$parametro%') order by ID desc";
 $total_registros = "5000";
 }
 else{
-	$sql = "SELECT * FROM chamadosExt order by ID asc";
+	$sql = "SELECT * FROM chamadosExt order by ID desc";
 	$total_registros = "50";
 }
 
