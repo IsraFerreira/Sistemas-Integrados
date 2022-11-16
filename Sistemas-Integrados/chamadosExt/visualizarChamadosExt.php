@@ -99,7 +99,11 @@ while ($registro = mysqli_fetch_array($resultado))
 	echo "<td>".$rdata."</td>";
 	echo "<td><a href='alterarChamadosExt.php?id=".$rid."&empresa=".$rempresa."&solicitacao=".$rsolicitacao."&data=".$rdata."&resolvido=".$rresolvido."&dataresolvido=".$rdataresolvido."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
 	echo "<a href='apagarChamadosExt.php?id=".$rid."&empresa=".$rempresa."&solicitacao=".$rsolicitacao."&data=".$rdata."&resolvido=".$rresolvido."&dataresolvido=".$rdataresolvido."'><i class='fa-solid fa-trash' id='icone2'></i></a></td>";
-	echo "<td>".$rresolvido."</td>";
+	if($rresolvido == "nao"){
+		echo "<td style='background-color:#eb1913; color:white'>".$rresolvido."</td>";}
+		else{
+		echo "<td style='background-color:#1ff04a; color:white'>".$rresolvido."</td>";
+	}
 	echo "<td>".$rdataresolvido."</td>";	
 	echo "</tr>";
 
