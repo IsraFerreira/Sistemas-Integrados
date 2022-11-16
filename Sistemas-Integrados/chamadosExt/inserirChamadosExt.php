@@ -27,10 +27,10 @@ $visita = "Chamado Ext Atualizado";
 $log = "INSERT INTO logs(hora, ip, usuario, visita) VALUES ('$hora', '$ip', '$login', '$visita')";
 $log2 = mysqli_query($conn, $log);
 
-if($resolvido = 'sim') {
+if($resolvido == 'sim') {
 $atualiza = "UPDATE chamadosExt SET ID = '$id', empresa = '$empresa', solicitacao = '$solicitacao', data = '$data', resolvido = '$resolvido', dataResolvido = NOW() WHERE ID='$id'"; }
-else {
-$atualiza = "UPDATE chamadosExt SET ID = '$id', empresa = '$empresa', solicitacao = '$solicitacao', data = '$data', resolvido = '$resolvido', dataResolvido = none WHERE ID='$id'";   
+else if ($resolvido == 'nao') {
+$atualiza = "UPDATE chamadosExt SET ID = '$id', empresa = '$empresa', solicitacao = '$solicitacao', data = '$data', resolvido = '$resolvido', dataResolvido = NULL WHERE ID='$id'";   
 }
 $atualiz = mysqli_query($conn, $atualiza);
 header("Location:visualizarChamadosExt.php");

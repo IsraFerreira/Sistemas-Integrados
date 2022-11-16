@@ -131,7 +131,7 @@ echo "</div>";
 
 ?>
 
-<a href="cadastrarChamadosExt.php"><input type="button" value="Cadastrar Chamado Externo" class="botao"></a>
+<a href="cadastrarChamadosExt.php"><input type="button" value="Cadastrar Chamado Ext" class="botao"></a>
 <a href="../escolha.php"><input type="button" value="Voltar Sistemas" class="botao"></a>
 
 </div>

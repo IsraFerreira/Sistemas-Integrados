@@ -150,6 +150,14 @@ h5 {
   margin: 0px 10px;
 }
 
+form > .botao{
+  width: fit-content;
+}
+
+form > a > .botao{
+  width: fit-content;
+}
+
 
 
 

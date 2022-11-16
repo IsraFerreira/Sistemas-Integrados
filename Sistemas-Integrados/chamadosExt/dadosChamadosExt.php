@@ -12,6 +12,7 @@ $login = $_POST['login'];
 $empresa = $_POST['empresa'];
 $solicitacao = $_POST['solicitacao'];
 $data = $_POST['data'];
+$resolvido = 'nao';
 
 
 $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
@@ -24,7 +25,7 @@ $visita = "Chamado Externo Adicionado";
 $log = "INSERT INTO logs(hora, ip, usuario, visita) VALUES ('$hora', '$ip', '$login', '$visita')";
 $log2 = mysqli_query($conn, $log);
 
-$dados = "INSERT INTO chamadosExt(empresa, solicitacao, data) VALUES ('$empresa', '$solicitacao', NOW())";
+$dados = "INSERT INTO chamadosExt(empresa, solicitacao, data, resolvido) VALUES ('$empresa', '$solicitacao', NOW(), '$resolvido')";
 $dado = mysqli_query($conn, $dados)
 ?>
 
