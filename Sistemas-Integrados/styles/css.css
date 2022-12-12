@@ -158,6 +158,18 @@ form > a > .botao{
   width: fit-content;
 }
 
+.linkImpressora{
+  font-size: 15px;
+  width: fit-content;
+  height: 20px;
+  border: 3px solid var(--cor4);
+  border-radius: 5px;
+  background-color: var(--cor2);
+  cursor: pointer;
+  margin: 30px 20px;
+  text-decoration: none;
+  color: var(--cor5);
+}
 
 
 
