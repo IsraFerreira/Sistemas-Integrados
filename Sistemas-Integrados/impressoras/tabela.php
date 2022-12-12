@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include('conexao.php');
 session_start();
 $logged = $_SESSION['logged'];
