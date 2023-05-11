@@ -249,10 +249,28 @@ div.ocorrenciaSim {
   margin: 20px;
 }
 
+div.ocorrenciaHoje {
+  background-color: rgb(255, 52, 52);
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.479);
+  color: rgb(44, 44, 44);
+  width: 150px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 10px;
+  margin: 20px;
+}
+
 .ocorrencia > h1 {
   font-size: 14px;
 }
 
 .ocorrenciaSim > h1 {
+  font-size: 14px;
+}
+
+.ocorrenciaHoje > h1 {
   font-size: 14px;
 }

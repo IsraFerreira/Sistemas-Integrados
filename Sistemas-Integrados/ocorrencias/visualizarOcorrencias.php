@@ -90,7 +90,7 @@ $resultado = mysqli_query($strcon, "$sql LIMIT $inicio,$total_registros") or die
  // verifica o número total de registros
 $totalpaginas = $totalregistros / $total_registros;	
 
-$dataAtual = 
+$dataAtual = date("Y-m-d");
 
 
 //obtendo os dados por meio de um loop while:
@@ -106,7 +106,9 @@ while ($registro = mysqli_fetch_array($resultado))
 
 	if($rresolvido == "sim"){
 		echo "<div class='ocorrenciaSim'>";}
-	else if($rdataResolvido = ){
+	else if($rcontatoEm == $dataAtual ){
+		echo "<div class='ocorrenciaHoje'>";
+	} else {
 		echo "<div class='ocorrencia'>";
 	}
 	echo $rid;
@@ -114,7 +116,7 @@ while ($registro = mysqli_fetch_array($resultado))
 	echo $rdescricao;
 	echo "<br>";
 	echo "<h1>Contatar: $rcontatoEm </h1>";
-	echo "<h1>Cadastro: $rdataCadastro</h1>";
+	// echo "<h1>Cadastro: $rdataCadastro</h1>";
 	echo "<h1>Ultimo Parecer: $rdataUltimoParecer</h1> ";
 			// Empresa:
 			// <input type="text" name="empresa" placeholder="Empresa" required> <br><br>
