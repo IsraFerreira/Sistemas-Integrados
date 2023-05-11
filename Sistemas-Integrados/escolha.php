@@ -26,6 +26,7 @@ if($logged != true){
         <h3>Escolha uma das opções</h3>
         <a href="wifi/visualizarWifi.php"><input type="button" value="Lista de Wifi" class="botao"></a>
         <a href="chamadosExt/visualizarChamadosExt.php"><input type="button" value="Chamados Externos" class="botao"></a>
+        <a href="ocorrencias/visualizarOcorrencias.php"><input type="button" value="Ocorrencias" class="botao"></a>
         <a href="http://intranet.iec.net/estoque/visualizar.php"><input type="button" value="Estoque" class="botao"></a>
         <a href="impressoras/index.php"><input type="button" value="Impressoras" class="botao"></a>
         <!-- <a href="visualizar.php"><input type="button" value="Visualizar Inventário" class="botao"></a> -->
