@@ -90,6 +90,8 @@ $resultado = mysqli_query($strcon, "$sql LIMIT $inicio,$total_registros") or die
  // verifica o número total de registros
 $totalpaginas = $totalregistros / $total_registros;	
 
+$dataAtual = 
+
 
 //obtendo os dados por meio de um loop while:
 while ($registro = mysqli_fetch_array($resultado))
@@ -104,7 +106,7 @@ while ($registro = mysqli_fetch_array($resultado))
 
 	if($rresolvido == "sim"){
 		echo "<div class='ocorrenciaSim'>";}
-	else{
+	else if($rdataResolvido = ){
 		echo "<div class='ocorrencia'>";
 	}
 	echo $rid;
