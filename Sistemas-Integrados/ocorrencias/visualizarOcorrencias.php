@@ -15,7 +15,7 @@ if($logged != true){
 <link href="tabela.css" rel="stylesheet" type="text/css">
 <script src="https://kit.fontawesome.com/959cbca264.js" crossorigin="anonymous"></script>
 
-<title>Listagem de Ocorrências</title>
+<title>Listagem de Tarefas</title>
 </head>
 <body>
 	<div class="inicial">
@@ -26,18 +26,18 @@ if($logged != true){
 		<div class="formulario">
         <form action="dadosOcorrencia.php" method="post"> 
             Descricao:
-            <input type="text" name="descricao" placeholder="Cadastre uma nova Ocorrência" required> <br><br>
+            <input type="text" name="descricao" placeholder="Cadastre uma nova Tarefa" required> <br><br>
             Contatar Em:
             <input type="date" name="contatoEm" required> <br><br>
 
-            <input type="submit" value="Cadastrar Ocorrencia" class="botaoForm1">
+            <input type="submit" value="Cadastrar Tarefa" class="botaoForm1">
             <input type="reset" value="Limpar" class="botaoForm2">
         </form>
 		</div>
 
 
 
-		<h3>Lista de Ocorrencias</h3>
+		<h3>Lista de Tarefas</h3>
 
 		<p>
 			<form action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -47,7 +47,7 @@ if($logged != true){
 		</p>
 
 
-		<div class="flex-container">
+		<div class="flex-containerOcorrencia">
 
 <?php
 
@@ -106,7 +106,7 @@ while ($registro = mysqli_fetch_array($resultado))
 
 	if($rresolvido == "sim"){
 		echo "<div class='ocorrenciaSim'>";}
-	else if($rcontatoEm == $dataAtual ){
+	else if($rcontatoEm == $dataAtual || $dataAtual > $rcontatoEm){
 		echo "<div class='ocorrenciaHoje'>";
 	} else {
 		echo "<div class='ocorrencia'>";

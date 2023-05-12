@@ -216,9 +216,20 @@ div.formulario2 {
   margin: 10px;
 }
 
+div.flex-containerOcorrencia {
+  display: flex;
+  align-items: center;
+  width: 80vw;
+  /* height: 80vh; */
+  flex-wrap: wrap;
+}
+
 div.flex-container {
   display: flex;
   align-items: center;
+  /* width: 80vw; */
+  /* height: 80vh; */
+  flex-wrap: wrap;
 }
 
 div.ocorrencia {

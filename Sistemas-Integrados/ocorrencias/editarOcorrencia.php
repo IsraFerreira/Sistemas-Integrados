@@ -24,7 +24,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
 $hora = date('Y-m-d H:i:s'); // Salva a data e hora atual (formato MySQL)
 $visita = mysql_escape_string($visita);
-$visita = "Ocorrencia Atualizada";
+$visita = "Tarefa Atualizada";
 
 // Monta a query para inserir o log no sistema
 $log = "INSERT INTO logsOcorrencia(hora, ip, usuario, visita) VALUES ('$hora', '$ip', '$login', '$visita')";

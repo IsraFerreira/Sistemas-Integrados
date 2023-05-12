@@ -37,7 +37,7 @@ $dataUltimoParecer = filter_input(INPUT_GET, 'dataUltimoParecer', FILTER_SANITIZ
         <form action="editarOcorrencia.php" method="post">
 			<input type="int" name="idOcorrencia" placeholder="ID" value="<?php echo $idOcorrencia; ?>" readonly="true" class="bloqueado"><br><br>
             Descricao:
-            <input type="text" name="descricao" placeholder="Cadastre uma nova Ocorrência" value="<?php echo $descricao; ?>" required> <br><br>
+            <input type="text" name="descricao" placeholder="Cadastre uma nova Tarefa" value="<?php echo $descricao; ?>" required> <br><br>
             Contatar Em:
             <input type="date" name="contatoEm" required> <br><br>
 
@@ -181,7 +181,7 @@ echo "</div>";
 
 ?>
 
-<a href="visualizarOcorrencias.php"><input type="button" value="Voltar Ocorrencias" class="botao"></a>
+<a href="visualizarOcorrencias.php"><input type="button" value="Voltar Tarefas" class="botao"></a>
 
 </div>
 </body>
