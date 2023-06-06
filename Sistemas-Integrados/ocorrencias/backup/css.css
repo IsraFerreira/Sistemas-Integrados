@@ -1,0 +1,193 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+
+  --cor1: #A6EBC9;
+  --cor2: #61FF7E;
+  --cor3: #5EEB5B;
+  --cor4: #62AB37;
+  --cor5: #393424;
+
+  --corTabela1: rgb(227, 253, 233);
+  --corTabela2: rgb(163, 231, 146);
+
+  --alerta: rgb(161, 3, 3);
+}
+
+body {
+  background: -webkit-gradient(linear, left top, right top, from(var(--cor1)), to(var(--cor5)));
+  background: -moz-linear-gradient(left, --cor1, --cor5);
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=var(--cor1), EndColorStr=var(--cor5));
+}
+
+div.total {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+div.inicial {
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.479);
+  color: rgb(44, 44, 44);
+  width: fit-content;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 10px;
+
+}
+
+div.inicial img {
+  width: 180px;
+  height: 180px;
+}
+
+form {
+  /* width: 50px; */
+  /* padding: 0px 50px;  */
+}
+
+#formLogin {
+  display: grid;
+  width: fit-content;
+  height: fit-content;
+  grid-template-areas:
+    "loginLBL loginInput"
+    "senhaLBL senhaInput";
+  grid-template-rows: 50px 50px;
+  grid-template-columns: 150px;
+  row-gap: 10px;
+
+}
+
+#formLogin>#loginLBL {
+  grid-area: loginLBL;
+}
+
+#formLogin>#loginInput {
+  grid-area: loginInput;
+  text-align: left;
+}
+
+#formLogin>#senhaLBL {
+  grid-area: senhaLBL;
+}
+
+#formLogin>#senhaInput {
+  grid-area: senhaInput;
+  text-align: left;
+}
+
+div #botao {
+  width: 270%;
+}
+
+h3 {
+  padding: 20px;
+}
+
+.botao {
+  font-size: 15px;
+  width: fit-content;
+  padding: 15px 10px;
+  border: 3px solid var(--cor4);
+  border-radius: 10px;
+  background-color: var(--cor2);
+  cursor: pointer;
+}
+
+.editavel {
+  background: var(--cor5);
+  color: var(--corTabela1);
+  padding: 10px;
+}
+
+#editavel1 {
+  padding-right: 30px;
+}
+
+.bloqueado {
+  cursor: not-allowed;
+}
+
+h5 {
+  color: red;
+  font-size: 10px;
+}
+
+#configuracao {
+  float: left;
+  /* float: right; */
+}
+
+.sessao {
+  display: flex;
+  background-color: var(--cor1);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sessao>h4{
+  font-size: 14px;
+}
+
+.sessao>a>.botaoSessao {
+  font-size: 13px;
+  width: fit-content;
+  height: 20px;
+  border: 3px solid var(--cor4);
+  border-radius: 5px;
+  background-color: var(--cor2);
+  cursor: pointer;
+  margin: 0px 10px;
+}
+
+form > .botao{
+  width: fit-content;
+}
+
+form > a > .botao{
+  width: fit-content;
+}
+
+.linkImpressora{
+  font-size: 15px;
+  width: fit-content;
+  height: 20px;
+  border: 3px solid var(--cor4);
+  border-radius: 5px;
+  background-color: var(--cor2);
+  cursor: pointer;
+  margin: 30px 20px;
+  text-decoration: none;
+  color: var(--cor5);
+}
+
+
+
+
+main {
+  /* background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  width: 670px;
+  height: 800px;
+  margin: auto;
+  padding: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.479);
+  color: rgb(44, 44, 44); */
+}
+
+
+footer {
+  /* color: white;
+  text-align: center;
+  font-style: italic; */
+}

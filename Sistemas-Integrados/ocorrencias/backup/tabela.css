@@ -285,31 +285,3 @@ div.ocorrenciaHoje {
 .ocorrenciaHoje > h1 {
   font-size: 14px;
 }
-
-.btn{
-  
-  float:right;
-  margin:13px 0 0 0;
-}
-
-.VermelhoB{
-  width:18px;
-  height:18px;
-  border-radius: 50%; 
-   background-color: red;
-   
- }
-
- .AmareloB{
-   width:18px;
-  height:18px;
-    border-radius: 50%; 
-   background-color: yellow;
- }
-
- .VerdeB{
-   width:18px;
-   height:18px;
-   border-radius: 50%; 
-   background-color: green;
- }

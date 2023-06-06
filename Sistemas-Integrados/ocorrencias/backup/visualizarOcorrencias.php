@@ -20,11 +20,6 @@ if($logged != true){
 <body>
 	<div class="inicial">
 	<?php include("session.php"); ?>
-	<div class="btn">
-	    <button type="radio" class="VermelhoB"></button>
-	    <button type="radio" class="AmareloB"></button> 
-	    <button type="radio" class="VerdeB"></button>
-    </div>	
 		<img src="../imagens/logo.png"/>
 
 
