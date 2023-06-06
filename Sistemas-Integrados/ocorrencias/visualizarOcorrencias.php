@@ -39,6 +39,7 @@ if($logged != true){
 
             <input type="submit" value="Cadastrar Tarefa" class="botaoForm1">
             <input type="reset" value="Limpar" class="botaoForm2">
+        
         </form>
 		</div>
 
