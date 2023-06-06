@@ -21,10 +21,12 @@ if($logged != true){
 	<div class="inicial">
 	<?php include("session.php"); ?>
 	<div class="btn">
-	    <button type="radio" class="VermelhoB"></button>
-	    <button type="radio" class="AmareloB"></button> 
-	    <button type="radio" class="VerdeB"></button>
-    </div>	
+	    <form action="<?php echo $_SERVER['PHP_SELF']; ?>"><button class="VermelhoB" type="submit" name="parametro" value="ocorrenciaHoje"></button></form>
+
+		<form action="<?php echo $_SERVER['PHP_SELF']; ?>"> <button class="AmareloB"type="submit" name="parametro" value="ocorrencia"></button> </form>
+
+		<form action="<?php echo $_SERVER['PHP_SELF']; ?>"> <button class="VerdeB" type="submit" name="parametro" value="ocorrenciaSim"></button></form>
+    </div>
 		<img src="../imagens/logo.png"/>
 
 
@@ -71,7 +73,20 @@ $parametro = filter_input(INPUT_GET, "parametro");
 
 $strcon = mysqli_connect($servidor, $usuario, $senha, $dbname) or die ('Erro ao conectar ao banco de dados');
 
-if($parametro){
+
+if($parametro=="ocorrenciaHoje"){
+$sql = "SELECT * from ocorrencias where cor like ('vermelho') order by id desc";
+$total_registros = "5000"; 
+}
+else if($parametro=="ocorrencia"){
+$sql = "SELECT * from ocorrencias where cor like ('amarelo') order by id desc";
+$total_registros = "5000";	
+}
+else if($parametro=="ocorrenciaSim"){
+$sql = "SELECT * from ocorrencias where cor like ('verde') order by id desc";
+$total_registros = "5000";	
+}
+else if($parametro){
 $sql = "SELECT * from ocorrencias where id like ('%$parametro%') or descricao like ucase('%$parametro%') or resolvido like ucase('%$parametro%') order by id desc";
 $total_registros = "5000";
 }
@@ -80,6 +95,9 @@ else{
 	$total_registros = "50";
 }
 
+
+
+$dataAtual = date("Y-m-d");
 
 $inicio = $paginamarcada - 1;
 $inicio = $inicio * $total_registros;
@@ -95,7 +113,6 @@ $resultado = mysqli_query($strcon, "$sql LIMIT $inicio,$total_registros") or die
  // verifica o número total de registros
 $totalpaginas = $totalregistros / $total_registros;	
 
-$dataAtual = date("Y-m-d");
 
 
 //obtendo os dados por meio de um loop while:
@@ -108,6 +125,7 @@ while ($registro = mysqli_fetch_array($resultado))
 	$rdataCadastro = $registro['dataCadastro'];
 	$rdataResolvido = $registro['dataResolvido'];
 	$rdataUltimoParecer = $registro['dataUltimoParecer'];
+	$rcor = $registro['cor'];
 
 	if($rresolvido == "sim"){
 		echo "<div class='ocorrenciaSim'>";}
@@ -130,7 +148,7 @@ while ($registro = mysqli_fetch_array($resultado))
 
 	// <input type="submit" value="Cadastrar Chamado Externo" class="botao">
 	// <input type="reset" value="Limpar" class="botao">
-	echo "<a href='inserirParecer.php?id=".$rid."&descricao=".$rdescricao."&contatoEm=".$rcontatoEm."&resolvido=".$rresolvido."&dataCadastro=".$rdataCadastro."&dataResolvido=".$rdataResolvido."&dataUltimoParecer=".$rdataUltimoParecer."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
+	echo "<a href='inserirParecer.php?id=".$rid."&descricao=".$rdescricao."&contatoEm=".$rcontatoEm."&resolvido=".$rresolvido."&dataCadastro=".$rdataCadastro."&dataResolvido=".$rdataResolvido."&dataUltimoParecer=".$rdataUltimoParecer."&cor=".$rcor."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
 	echo "<a href='apagarOcorrencia.php?id=".$rid."'><i class='fa-solid fa-trash' id='icone2'></i></a>";
 	echo "</div>";
 

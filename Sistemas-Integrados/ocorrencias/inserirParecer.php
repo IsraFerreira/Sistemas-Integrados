@@ -15,6 +15,7 @@ $resolvido = filter_input(INPUT_GET, 'resolvido', FILTER_SANITIZE_STRING);
 $dataCadastro = filter_input(INPUT_GET, 'dataCadastro', FILTER_SANITIZE_STRING);
 $dataResolvido = filter_input(INPUT_GET, 'dataResolvido', FILTER_SANITIZE_STRING);
 $dataUltimoParecer = filter_input(INPUT_GET, 'dataUltimoParecer', FILTER_SANITIZE_STRING);
+$cor = filter_input(INPUT_GET, 'cor', FILTER_SANITIZE_STRING);
 
 ?>
 
@@ -65,6 +66,9 @@ $dataUltimoParecer = filter_input(INPUT_GET, 'dataUltimoParecer', FILTER_SANITIZ
 			} else {
 			echo "<input type='submit' value='Atualizar' class='botao'>"; } 
 			?>
+
+			
+            <input type="hidden" name="cor" placeholder="cor" value="<?php echo $cor; ?>" readonly="true" class="bloqueado"><br><br>
         </form>
 		</div>
 

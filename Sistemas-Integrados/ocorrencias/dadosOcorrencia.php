@@ -24,7 +24,16 @@ $visita = "Tarefa Adicionada";
 $log = "INSERT INTO logsOcorrencia(hora, ip, usuario, visita) VALUES ('$hora', '$ip', '$login', '$visita')";
 $log2 = mysqli_query($conn, $log);
 
-$dados = "INSERT INTO ocorrencias(descricao, contatoEm, resolvido, dataCadastro) VALUES ('$descricao', '$contatoEm', '$resolvido', NOW())";
+$hoje = date("Y-m-d");
+
+if($resolvido=='sim'){
+$dados = "INSERT INTO ocorrencias(descricao, contatoEm, resolvido, dataCadastro, cor) VALUES ('$descricao', '$contatoEm', '$resolvido', NOW(), 'verde')";
+} else if ($resolvido=='nao' && $contatoEm == $hoje){
+$dados = "INSERT INTO ocorrencias(descricao, contatoEm, resolvido, dataCadastro, cor) VALUES ('$descricao', '$contatoEm', '$resolvido', NOW(), 'vermelho')";
+} else {
+$dados = "INSERT INTO ocorrencias(descricao, contatoEm, resolvido, dataCadastro, cor) VALUES ('$descricao', '$contatoEm', '$resolvido', NOW(), 'amarelo')";   
+}
+
 $dado = mysqli_query($conn, $dados);
 
 header('Location:visualizarOcorrencias.php?login='.$login);
