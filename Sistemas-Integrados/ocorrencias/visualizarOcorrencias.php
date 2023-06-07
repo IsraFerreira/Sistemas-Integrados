@@ -77,23 +77,23 @@ $strcon = mysqli_connect($servidor, $usuario, $senha, $dbname) or die ('Erro ao 
 
 
 if($parametro=="ocorrenciaHoje"){
-$sql = "SELECT * from ocorrencias where cor like ('vermelho') OR contatoEm like ('$hoje') order by id desc";
+$sql = "SELECT * from ocorrencias where cor like ('vermelho') OR contatoEm like ('$hoje') order by contatoEm desc";
 $total_registros = "5000"; 
 }
 else if($parametro=="ocorrencia"){
-$sql = "SELECT * from ocorrencias where cor like ('amarelo') AND contatoEm != ('$hoje') order by id desc";
+$sql = "SELECT * from ocorrencias where cor like ('amarelo') AND contatoEm != ('$hoje') order by contatoEm desc";
 $total_registros = "5000";	
 }
 else if($parametro=="ocorrenciaSim"){
-$sql = "SELECT * from ocorrencias where cor like ('verde') order by id desc";
+$sql = "SELECT * from ocorrencias where cor like ('verde') order by contatoEm desc";
 $total_registros = "5000";	
 }
 else if($parametro){
-$sql = "SELECT * from ocorrencias where id like ('%$parametro%') or descricao like ucase('%$parametro%') or resolvido like ucase('%$parametro%') order by id desc";
+$sql = "SELECT * from ocorrencias where id like ('%$parametro%') or descricao like ucase('%$parametro%') or resolvido like ucase('%$parametro%') order by contatoEm desc";
 $total_registros = "5000";
 }
 else{
-	$sql = "SELECT * FROM ocorrencias order by id desc";
+	$sql = "SELECT * FROM ocorrencias order by contatoEm desc";
 	$total_registros = "50";
 }
 
