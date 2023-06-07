@@ -45,6 +45,10 @@ div.inicial img {
   height: 180px;
 }
 
+div.formulario > form {
+  padding-top: 15px;
+}
+
 
 h3 {
   padding: 20px;

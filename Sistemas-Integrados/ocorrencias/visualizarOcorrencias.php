@@ -77,7 +77,7 @@ $strcon = mysqli_connect($servidor, $usuario, $senha, $dbname) or die ('Erro ao 
 
 
 if($parametro=="ocorrenciaHoje"){
-$sql = "SELECT * from ocorrencias where cor like ('vermelho') OR contatoEm like ('$hoje') order by contatoEm desc";
+$sql = "SELECT * from ocorrencias where cor like ('vermelho') OR contatoEm like ('$hoje') AND resolvido like ('nao') order by contatoEm desc";
 $total_registros = "5000"; 
 }
 else if($parametro=="ocorrencia"){
