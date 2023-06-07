@@ -252,7 +252,13 @@ align-items: center;
 margin: auto;
 padding: 10px;
 margin: 20px;
-overflow-x: hidden;
+overflow:auto;
+scrollbar-width: none;
+-ms-overflow-style: none;
+}
+
+.ocorrencia::-webkit-scrollbar{
+  width: 0;
 }
 
 div.ocorrenciaSim {
@@ -267,9 +273,15 @@ align-items: center;
 margin: auto;
 padding: 10px;
 margin: 20px;
-overflow-x: hidden;
-
+overflow:auto;
+scrollbar-width: none;
+-ms-overflow-style: none;
 }
+
+.ocorrenciaSim::-webkit-scrollbar{
+  width: 0;
+}
+
 
 div.ocorrenciaHoje {
 background-color: rgb(255, 52, 52);
@@ -283,7 +295,13 @@ align-items: center;
 margin: auto;
 padding: 10px;
 margin: 20px;
-overflow-x: hidden;
+overflow:auto;
+scrollbar-width: none;
+-ms-overflow-style: none;
+}
+
+.ocorrenciaHoje::-webkit-scrollbar{
+  width: 0;
 }
 
 .ocorrencia > h1 {
