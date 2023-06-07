@@ -39,7 +39,6 @@ if($logged != true){
 
             <input type="submit" value="Cadastrar Tarefa" class="botaoForm1">
             <input type="reset" value="Limpar" class="botaoForm2">
-        
         </form>
 		</div>
 
@@ -68,6 +67,8 @@ $paginamarcada = "1";
 $paginamarcada = $pagina;
 }
 
+$hoje = date("Y-m-d");
+
 
 //conectando ao banco de dados;
 $parametro = filter_input(INPUT_GET, "parametro");
@@ -76,11 +77,11 @@ $strcon = mysqli_connect($servidor, $usuario, $senha, $dbname) or die ('Erro ao 
 
 
 if($parametro=="ocorrenciaHoje"){
-$sql = "SELECT * from ocorrencias where cor like ('vermelho') order by id desc";
+$sql = "SELECT * from ocorrencias where cor like ('vermelho') OR contatoEm like ('$hoje') order by id desc";
 $total_registros = "5000"; 
 }
 else if($parametro=="ocorrencia"){
-$sql = "SELECT * from ocorrencias where cor like ('amarelo') order by id desc";
+$sql = "SELECT * from ocorrencias where cor like ('amarelo') AND contatoEm != ('$hoje') order by id desc";
 $total_registros = "5000";	
 }
 else if($parametro=="ocorrenciaSim"){
@@ -140,32 +141,12 @@ while ($registro = mysqli_fetch_array($resultado))
 	echo $rdescricao;
 	echo "<br>";
 	echo "<h1>Contatar: $rcontatoEm </h1>";
-	// echo "<h1>Cadastro: $rdataCadastro</h1>";
-	echo "<h1>Ultimo Parecer: $rdataUltimoParecer</h1> ";
-			// Empresa:
-			// <input type="text" name="empresa" placeholder="Empresa" required> <br><br>
-			// Solicitacao:
-			// <input type="int" name="solicitacao" placeholder="Solicitacao" required> <br><br>
 
-	// <input type="submit" value="Cadastrar Chamado Externo" class="botao">
-	// <input type="reset" value="Limpar" class="botao">
+	echo "<h1>Ultimo Parecer: $rdataUltimoParecer</h1> ";
+
 	echo "<a href='inserirParecer.php?id=".$rid."&descricao=".$rdescricao."&contatoEm=".$rcontatoEm."&resolvido=".$rresolvido."&dataCadastro=".$rdataCadastro."&dataResolvido=".$rdataResolvido."&dataUltimoParecer=".$rdataUltimoParecer."&cor=".$rcor."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
 	echo "<a href='apagarOcorrencia.php?id=".$rid."'><i class='fa-solid fa-trash' id='icone2'></i></a>";
 	echo "</div>";
-
-	// echo "<tr>";
-    // echo "<td>".$rempresa."</td>";
-	// echo "<td>".$rsolicitacao."</td>";
-	// echo "<td>".$rdata."</td>";
-	// echo "<td><a href='alterarChamadosExt.php?id=".$rid."&empresa=".$rempresa."&solicitacao=".$rsolicitacao."&data=".$rdata."&resolvido=".$rresolvido."&dataresolvido=".$rdataresolvido."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
-	// echo "<a href='apagarChamadosExt.php?id=".$rid."&empresa=".$rempresa."&solicitacao=".$rsolicitacao."&data=".$rdata."&resolvido=".$rresolvido."&dataresolvido=".$rdataresolvido."'><i class='fa-solid fa-trash' id='icone2'></i></a></td>";
-	// if($rresolvido == "nao"){
-	// 	echo "<td style='background-color:#eb1913; color:white'>".$rresolvido."</td>";}
-	// 	else{
-	// 	echo "<td style='background-color:#1ff04a; color:white'>".$rresolvido."</td>";
-	// }
-	// echo "<td>".$rdataresolvido."</td>";	
-	// echo "</tr>";
 
 }
 mysqli_close($strcon);
