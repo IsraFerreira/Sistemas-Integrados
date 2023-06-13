@@ -79,11 +79,11 @@ $strcon = mysqli_connect($servidor, $usuario, $senha, $dbname) or die ('Erro ao 
 
 
 if($parametro=="ocorrenciaHoje"){
-$sql = "SELECT * from ocorrencias where cor like ('vermelho') OR contatoEm <= ('$hoje') AND resolvido like ('nao') order by contatoEm desc";
+$sql = "SELECT * from ocorrencias where cor like ('vermelho') OR contatoEm <= ('$hoje') AND resolvido like ('nao') order by contatoEm asc";
 $total_registros = "5000"; 
 }
 else if($parametro=="ocorrencia"){
-$sql = "SELECT * from ocorrencias where cor like ('amarelo') AND contatoEm > ('$hoje') order by contatoEm desc";
+$sql = "SELECT * from ocorrencias where cor like ('amarelo') AND contatoEm > ('$hoje') order by contatoEm asc";
 $total_registros = "5000";	
 }
 else if($parametro=="ocorrenciaSim"){
@@ -95,7 +95,7 @@ $sql = "SELECT * from ocorrencias where id like ('%$parametro%') or descricao li
 $total_registros = "5000";
 }
 else{
-	$sql = "SELECT * FROM ocorrencias order by contatoEm desc";
+	$sql = "SELECT * FROM ocorrencias order by resolvido asc, contatoEm asc";
 	$total_registros = "50";
 }
 
