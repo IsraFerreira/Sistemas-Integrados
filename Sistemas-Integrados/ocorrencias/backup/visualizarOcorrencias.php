@@ -34,6 +34,8 @@ if($logged != true){
         <form action="dadosOcorrencia.php" method="post"> 
             Descricao:
             <input type="text" name="descricao" placeholder="Cadastre uma nova Tarefa" required> <br><br>
+			Descricao detalhada: <br>
+			<textarea name="desDetalhada" placeholder="Digite sua mensagem aqui..." rows="4" cols="50"></textarea> <br><br>
             Contatar Em:
             <input type="date" name="contatoEm" required> <br><br>
 
@@ -67,6 +69,8 @@ $paginamarcada = "1";
 $paginamarcada = $pagina;
 }
 
+$hoje = date("Y-m-d");
+
 
 //conectando ao banco de dados;
 $parametro = filter_input(INPUT_GET, "parametro");
@@ -75,23 +79,23 @@ $strcon = mysqli_connect($servidor, $usuario, $senha, $dbname) or die ('Erro ao 
 
 
 if($parametro=="ocorrenciaHoje"){
-$sql = "SELECT * from ocorrencias where cor like ('vermelho') order by id desc";
+$sql = "SELECT * from ocorrencias where cor like ('vermelho') OR contatoEm <= ('$hoje') AND resolvido like ('nao') order by contatoEm desc";
 $total_registros = "5000"; 
 }
 else if($parametro=="ocorrencia"){
-$sql = "SELECT * from ocorrencias where cor like ('amarelo') order by id desc";
+$sql = "SELECT * from ocorrencias where cor like ('amarelo') AND contatoEm > ('$hoje') order by contatoEm desc";
 $total_registros = "5000";	
 }
 else if($parametro=="ocorrenciaSim"){
-$sql = "SELECT * from ocorrencias where cor like ('verde') order by id desc";
+$sql = "SELECT * from ocorrencias where cor like ('verde') order by contatoEm desc";
 $total_registros = "5000";	
 }
 else if($parametro){
-$sql = "SELECT * from ocorrencias where id like ('%$parametro%') or descricao like ucase('%$parametro%') or resolvido like ucase('%$parametro%') order by id desc";
+$sql = "SELECT * from ocorrencias where id like ('%$parametro%') or descricao like ucase('%$parametro%') or resolvido like ucase('%$parametro%') order by contatoEm desc";
 $total_registros = "5000";
 }
 else{
-	$sql = "SELECT * FROM ocorrencias order by id desc";
+	$sql = "SELECT * FROM ocorrencias order by contatoEm desc";
 	$total_registros = "50";
 }
 
@@ -120,6 +124,7 @@ while ($registro = mysqli_fetch_array($resultado))
 {
     $rid = $registro['id']; 
 	$rdescricao = $registro['descricao'];
+	$rdesDetalhada = $registro['desDetalhada'];
 	$rcontatoEm = $registro['contatoEm'];
 	$rresolvido = $registro['resolvido'];
 	$rdataCadastro = $registro['dataCadastro'];
@@ -139,32 +144,12 @@ while ($registro = mysqli_fetch_array($resultado))
 	echo $rdescricao;
 	echo "<br>";
 	echo "<h1>Contatar: $rcontatoEm </h1>";
-	// echo "<h1>Cadastro: $rdataCadastro</h1>";
-	echo "<h1>Ultimo Parecer: $rdataUltimoParecer</h1> ";
-			// Empresa:
-			// <input type="text" name="empresa" placeholder="Empresa" required> <br><br>
-			// Solicitacao:
-			// <input type="int" name="solicitacao" placeholder="Solicitacao" required> <br><br>
 
-	// <input type="submit" value="Cadastrar Chamado Externo" class="botao">
-	// <input type="reset" value="Limpar" class="botao">
-	echo "<a href='inserirParecer.php?id=".$rid."&descricao=".$rdescricao."&contatoEm=".$rcontatoEm."&resolvido=".$rresolvido."&dataCadastro=".$rdataCadastro."&dataResolvido=".$rdataResolvido."&dataUltimoParecer=".$rdataUltimoParecer."&cor=".$rcor."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
+	echo "<h1>Ultimo Parecer: $rdataUltimoParecer</h1> ";
+
+	echo "<a href='inserirParecer.php?id=".$rid."&descricao=".$rdescricao."&desDetalhada=".$rdesDetalhada."&contatoEm=".$rcontatoEm."&resolvido=".$rresolvido."&dataCadastro=".$rdataCadastro."&dataResolvido=".$rdataResolvido."&dataUltimoParecer=".$rdataUltimoParecer."&cor=".$rcor."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
 	echo "<a href='apagarOcorrencia.php?id=".$rid."'><i class='fa-solid fa-trash' id='icone2'></i></a>";
 	echo "</div>";
-
-	// echo "<tr>";
-    // echo "<td>".$rempresa."</td>";
-	// echo "<td>".$rsolicitacao."</td>";
-	// echo "<td>".$rdata."</td>";
-	// echo "<td><a href='alterarChamadosExt.php?id=".$rid."&empresa=".$rempresa."&solicitacao=".$rsolicitacao."&data=".$rdata."&resolvido=".$rresolvido."&dataresolvido=".$rdataresolvido."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
-	// echo "<a href='apagarChamadosExt.php?id=".$rid."&empresa=".$rempresa."&solicitacao=".$rsolicitacao."&data=".$rdata."&resolvido=".$rresolvido."&dataresolvido=".$rdataresolvido."'><i class='fa-solid fa-trash' id='icone2'></i></a></td>";
-	// if($rresolvido == "nao"){
-	// 	echo "<td style='background-color:#eb1913; color:white'>".$rresolvido."</td>";}
-	// 	else{
-	// 	echo "<td style='background-color:#1ff04a; color:white'>".$rresolvido."</td>";
-	// }
-	// echo "<td>".$rdataresolvido."</td>";	
-	// echo "</tr>";
 
 }
 mysqli_close($strcon);

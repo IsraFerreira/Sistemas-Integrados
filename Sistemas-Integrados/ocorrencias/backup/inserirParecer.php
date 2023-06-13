@@ -10,6 +10,7 @@ if($logged != true){
 
 $idOcorrencia = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
 $descricao = filter_input(INPUT_GET, 'descricao', FILTER_SANITIZE_STRING);
+$desDetalhada = filter_input(INPUT_GET, 'desDetalhada', FILTER_SANITIZE_STRING);
 $contatoEm = filter_input(INPUT_GET, 'contatoEm', FILTER_SANITIZE_STRING);
 $resolvido = filter_input(INPUT_GET, 'resolvido', FILTER_SANITIZE_STRING);
 $dataCadastro = filter_input(INPUT_GET, 'dataCadastro', FILTER_SANITIZE_STRING);
@@ -37,8 +38,10 @@ $cor = filter_input(INPUT_GET, 'cor', FILTER_SANITIZE_STRING);
 		<div class="formulario">
         <form action="editarOcorrencia.php" method="post">
 			<input type="int" name="idOcorrencia" placeholder="ID" value="<?php echo $idOcorrencia; ?>" readonly="true" class="bloqueado"><br><br>
-            Descricao:
+            Nome:
             <input type="text" name="descricao" placeholder="Cadastre uma nova Tarefa" value="<?php echo $descricao; ?>" required> <br><br>
+			Descricao detalhada: <br>
+			<textarea name="desDetalhada" rows="4" cols="50"><?php echo $desDetalhada; ?></textarea><br><br>
             Contatar Em:
             <input type="date" name="contatoEm" required> <br><br>
 

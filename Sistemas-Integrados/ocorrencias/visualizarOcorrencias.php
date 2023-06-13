@@ -34,6 +34,8 @@ if($logged != true){
         <form action="dadosOcorrencia.php" method="post"> 
             Descricao:
             <input type="text" name="descricao" placeholder="Cadastre uma nova Tarefa" required> <br><br>
+			Descricao detalhada: <br>
+			<textarea name="desDetalhada" placeholder="Digite sua mensagem aqui..." rows="4" cols="50"></textarea> <br><br>
             Contatar Em:
             <input type="date" name="contatoEm" required> <br><br>
 
@@ -122,6 +124,7 @@ while ($registro = mysqli_fetch_array($resultado))
 {
     $rid = $registro['id']; 
 	$rdescricao = $registro['descricao'];
+	$rdesDetalhada = $registro['desDetalhada'];
 	$rcontatoEm = $registro['contatoEm'];
 	$rresolvido = $registro['resolvido'];
 	$rdataCadastro = $registro['dataCadastro'];
@@ -144,7 +147,7 @@ while ($registro = mysqli_fetch_array($resultado))
 
 	echo "<h1>Ultimo Parecer: $rdataUltimoParecer</h1> ";
 
-	echo "<a href='inserirParecer.php?id=".$rid."&descricao=".$rdescricao."&contatoEm=".$rcontatoEm."&resolvido=".$rresolvido."&dataCadastro=".$rdataCadastro."&dataResolvido=".$rdataResolvido."&dataUltimoParecer=".$rdataUltimoParecer."&cor=".$rcor."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
+	echo "<a href='inserirParecer.php?id=".$rid."&descricao=".$rdescricao."&desDetalhada=".$rdesDetalhada."&contatoEm=".$rcontatoEm."&resolvido=".$rresolvido."&dataCadastro=".$rdataCadastro."&dataResolvido=".$rdataResolvido."&dataUltimoParecer=".$rdataUltimoParecer."&cor=".$rcor."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
 	echo "<a href='apagarOcorrencia.php?id=".$rid."'><i class='fa-solid fa-trash' id='icone2'></i></a>";
 	echo "</div>";
 

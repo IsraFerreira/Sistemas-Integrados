@@ -13,6 +13,7 @@ else {
 
 $id = $_POST['idOcorrencia'];
 $descricao = $_POST['descricao'];
+$desDetalhada = $_POST ['desDetalhada'];
 $contatoEm = $_POST['contatoEm'];
 $resolvido = $_POST['resolvido'];
 $dataCadastro = $_POST['dataCadastro'];
@@ -34,11 +35,11 @@ $log2 = mysqli_query($conn, $log);
 $hoje = date("Y-m-d");
 
 if($resolvido=='sim'){
-$atualiza = "UPDATE ocorrencias SET id = '$id', descricao = '$descricao', contatoEm = '$contatoEm', resolvido = '$resolvido', dataCadastro = '$dataCadastro', dataResolvido = NOW(), dataUltimoParecer = '$dataUltimoParecer', cor = 'verde' WHERE id='$id'"; }
+$atualiza = "UPDATE ocorrencias SET id = '$id', descricao = '$descricao', desDetalhada = '$desDetalhada', contatoEm = '$contatoEm', resolvido = '$resolvido', dataCadastro = '$dataCadastro', dataResolvido = NOW(), dataUltimoParecer = '$dataUltimoParecer', cor = 'verde' WHERE id='$id'"; }
 else if($resolvido=='nao' && $contatoEm == $hoje) {
-    $atualiza = "UPDATE ocorrencias SET id = '$id', descricao = '$descricao', contatoEm = '$contatoEm', resolvido = '$resolvido', dataCadastro = '$dataCadastro', dataResolvido = '$dataResolvido', dataUltimoParecer = '$dataUltimoParecer', cor = 'vermelho' WHERE id='$id'"; } 
+    $atualiza = "UPDATE ocorrencias SET id = '$id', descricao = '$descricao', desDetalhada = '$desDetalhada', contatoEm = '$contatoEm', resolvido = '$resolvido', dataCadastro = '$dataCadastro', dataResolvido = '$dataResolvido', dataUltimoParecer = '$dataUltimoParecer', cor = 'vermelho' WHERE id='$id'"; } 
     else {
-        $atualiza = "UPDATE ocorrencias SET id = '$id', descricao = '$descricao', contatoEm = '$contatoEm', resolvido = '$resolvido', dataCadastro = '$dataCadastro', dataResolvido = '$dataResolvido', dataUltimoParecer = '$dataUltimoParecer', cor = 'amarelo' WHERE id='$id'"; } 
+        $atualiza = "UPDATE ocorrencias SET id = '$id', descricao = '$descricao', desDetalhada = '$desDetalhada', contatoEm = '$contatoEm', resolvido = '$resolvido', dataCadastro = '$dataCadastro', dataResolvido = '$dataResolvido', dataUltimoParecer = '$dataUltimoParecer', cor = 'amarelo' WHERE id='$id'"; } 
     
 $atualiz = mysqli_query($conn, $atualiza);
 header("Location:visualizarOcorrencias.php");

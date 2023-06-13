@@ -12,6 +12,7 @@ $login = $_POST['login'];
 $descricao = $_POST['descricao'];
 $contatoEm = $_POST['contatoEm'];
 $resolvido = 'nao';
+$desDetalhada = $_POST['desDetalhada'];
 
 
 $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
@@ -27,11 +28,11 @@ $log2 = mysqli_query($conn, $log);
 $hoje = date("Y-m-d");
 
 if($resolvido=='sim'){
-$dados = "INSERT INTO ocorrencias(descricao, contatoEm, resolvido, dataCadastro, cor) VALUES ('$descricao', '$contatoEm', '$resolvido', NOW(), 'verde')";
+$dados = "INSERT INTO ocorrencias(descricao, desDetalhada, contatoEm, resolvido, dataCadastro, cor) VALUES ('$descricao', '$desDetalhada', '$contatoEm', '$resolvido', NOW(), 'verde')";
 } else if ($resolvido=='nao' && $contatoEm == $hoje){
-$dados = "INSERT INTO ocorrencias(descricao, contatoEm, resolvido, dataCadastro, cor) VALUES ('$descricao', '$contatoEm', '$resolvido', NOW(), 'vermelho')";
+$dados = "INSERT INTO ocorrencias(descricao, desDetalhada, contatoEm, resolvido, dataCadastro, cor) VALUES ('$descricao', '$desDetalhada', '$contatoEm', '$resolvido', NOW(), 'vermelho')";
 } else {
-$dados = "INSERT INTO ocorrencias(descricao, contatoEm, resolvido, dataCadastro, cor) VALUES ('$descricao', '$contatoEm', '$resolvido', NOW(), 'amarelo')";   
+$dados = "INSERT INTO ocorrencias(descricao, desDetalhada, contatoEm, resolvido, dataCadastro, cor) VALUES ('$descricao',  '$desDetalhada', '$contatoEm', '$resolvido', NOW(), 'amarelo')";   
 }
 
 $dado = mysqli_query($conn, $dados);
