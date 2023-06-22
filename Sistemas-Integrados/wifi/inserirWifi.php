@@ -13,8 +13,8 @@ else {
 
 $id = $_POST['id2'];
 $nome = $_POST['nome2'];
-$setorleito = $_POST['setorleito2'];
-$aparelho = $_POST['aparelho2'];
+$setor = $_POST['setor2'];
+$predio = $_POST['predio2'];
 
 $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);	
 $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
@@ -26,7 +26,7 @@ $visita = "Wifi Atualizado";
 $log = "INSERT INTO logs(hora, ip, usuario, visita) VALUES ('$hora', '$ip', '$login', '$visita')";
 $log2 = mysqli_query($conn, $log);
 
-$atualizawifi = "UPDATE wifi SET ID = '$id', nome = '$nome', setorleito = '$setorleito', aparelho = '$aparelho' WHERE ID='$id'";
+$atualizawifi = "UPDATE wifi SET ID = '$id', nome = '$nome', setor = '$setor', predio = '$predio' WHERE ID='$id'";
 $atualizwifi = mysqli_query($conn, $atualizawifi);
 header("Location:visualizarWifi.php");
 ?>

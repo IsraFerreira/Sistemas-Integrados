@@ -15,7 +15,7 @@ if($logged != true){
 <link href="../styles/tabela.css" rel="stylesheet" type="text/css">
 <script src="https://kit.fontawesome.com/959cbca264.js" crossorigin="anonymous"></script>
 
-<title>Listagem de Wifi</title>
+<title>Lista de Ramais aguardando para troca ou adição</title>
 </head>
 <body>
 	<div class="inicial">
@@ -36,8 +36,8 @@ echo "<table>";
 echo "<tr>";
 echo "<th> ID </th>";
 echo "<th> Nome </th>";
-echo "<th> Setor/Leito </th>";
-echo "<th> Aparelho </th>";
+echo "<th> Setor </th>";
+echo "<th> Predio </th>";
 echo "<th> Dias </th>";
 echo "<th> Ações </th>";
 echo "</tr>";
@@ -57,7 +57,7 @@ $parametro = filter_input(INPUT_GET, "parametro");
 $strcon = mysqli_connect($servidor, $usuario, $senha, $dbname) or die ('Erro ao conectar ao banco de dados');
 
 if($parametro){
-$sql = "SELECT * from wifi where nome like ucase('%$parametro%') or setorleito like ucase('%$parametro%') or aparelho like ucase('%$parametro%') order by ID asc";
+$sql = "SELECT * from wifi where nome like ucase('%$parametro%') or setor like ucase('%$parametro%') or predio like ucase('%$parametro%') order by ID asc";
 $total_registros = "5000";
 }
 else{
@@ -80,7 +80,7 @@ $resultado = mysqli_query($strcon, "$sql LIMIT $inicio,$total_registros") or die
  // verifica o número total de registros
 $totalpaginas = $totalregistros / $total_registros;	
 
-echo "<h3>Lista de Wifi para Cadastrar</h3>";
+echo "<h3>Lista de Ramais aguardando para troca ou adição</h3>";
 
 //obtendo os dados por meio de um loop while:
 while ($registro = mysqli_fetch_array($resultado))
@@ -88,8 +88,8 @@ while ($registro = mysqli_fetch_array($resultado))
 {
     $rid = $registro['ID']; 
 	$rnome = $registro['nome'];
-	$rsetorleito = $registro['setorleito'];
-	$raparelho = $registro['aparelho'];
+	$rsetor = $registro['setor'];
+	$rpredio = $registro['predio'];
 	$rdata = $registro['data'];
 
 	$hoje = date('Y-m-d');
@@ -100,11 +100,11 @@ while ($registro = mysqli_fetch_array($resultado))
 	echo "<tr>";
 	echo "<td>".$rid."</td>";
     echo "<td>".$rnome."</td>";
-	echo "<td>".$rsetorleito."</td>";
-	echo "<td>".$raparelho."</td>";
+	echo "<td>".$rsetor."</td>";
+	echo "<td>".$rpredio."</td>";
 	echo "<td>".round($rdiasnafila)."</td>";
-	echo "<td><a href='alterarWifi.php?id=".$rid."&nome=".$rnome."&setorleito=".$rsetorleito."&aparelho=".$raparelho."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
-	echo "<a href='apagarWifi.php?id=".$rid."&nome=".$rnome."&setorleito=".$rsetorleito."&aparelho=".$raparelho."'><i class='fa-solid fa-trash' id='icone2'></i></a></td>";
+	echo "<td><a href='alterarWifi.php?id=".$rid."&nome=".$rnome."&setor=".$rsetor."&predio=".$rpredio."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
+	echo "<a href='apagarWifi.php?id=".$rid."&nome=".$rnome."&setor=".$rsetor."&predio=".$rpredio."'><i class='fa-solid fa-trash' id='icone2'></i></a></td>";
 	echo "</tr>";
 
 }
@@ -135,7 +135,7 @@ echo "</div>";
 
 ?>
 
-<a href="cadastrarWifi.php"><input type="button" value="Cadastrar Wifi" class="botao"></a>
+<a href="cadastrarWifi.php"><input type="button" value="Cadastrar Ramal" class="botao"></a>
 <a href="../escolha.php"><input type="button" value="Voltar Sistemas" class="botao"></a>
 
 </div>

@@ -12,7 +12,7 @@ if($logged != true){
      <head>
      <LINK REL="SHORTCUT ICON" href="../imagens/logo.png">
           <link href="../styles/css.css" rel="stylesheet" type="text/css">
-          <title>Edição de Equipamento</title>
+          <title>Edição de Ramal</title>
      </head>
      <body>
           <div class="total">
@@ -24,22 +24,22 @@ if($logged != true){
 
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
 $nome = filter_input(INPUT_GET, 'nome', FILTER_SANITIZE_STRING);
-$setorleito = filter_input(INPUT_GET, 'setorleito', FILTER_SANITIZE_STRING);
-$aparelho = filter_input(INPUT_GET, 'aparelho', FILTER_SANITIZE_STRING);
+$setor = filter_input(INPUT_GET, 'setor', FILTER_SANITIZE_STRING);
+$predio = filter_input(INPUT_GET, 'predio', FILTER_SANITIZE_STRING);
 
 
 ?>
 
-                    <h3>Atualizar dados do Wifi</h3>
+                    <h3>Atualizar dados do Ramal</h3>
                     <form action="inserirWifi.php" method="post">
                          <label class="editavel">ID:</label>
                          <input type="int" name="id2" placeholder="ID" value="<?php echo $id; ?>" readonly="true" class="bloqueado"> <br><br>
                          <label class="editavel" id="editavel1">Nome:</label>
                          <input type="text" name="nome2" placeholder="Nome" value="<?php echo $nome; ?>" class="editavel" /> <br><br>
-                         <label class="editavel">Setor / Leito:</label>
-                         <input type="text" name="setorleito2" value="<?php echo $setorleito; ?>" class="editavel" /><br><br>
-                         <label class="editavel">Aparelho:</label>
-                         <input type="text" name="aparelho2" value="<?php echo $aparelho; ?>" class="editavel" /><br><br>
+                         <label class="editavel">Setor:</label>
+                         <input type="text" name="setor2" value="<?php echo $setor; ?>" class="editavel" /><br><br>
+                         <label class="editavel">Predio:</label>
+                         <input type="text" name="predio2" value="<?php echo $predio; ?>" class="editavel" /><br><br>
                          <input type="submit" value="Atualizar" class="botao">
                     </form>
                </div>

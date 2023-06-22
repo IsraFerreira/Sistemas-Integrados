@@ -10,8 +10,8 @@ if($logged != true){
 
 $login = $_POST['login'];
 $nome = $_POST['nome'];
-$setorleito = $_POST['setorleito'];
-$aparelho = $_POST['aparelho'];
+$setor = $_POST['setor'];
+$predio = $_POST['predio'];
 $data = $_POST['data'];
 
 
@@ -25,7 +25,7 @@ $visita = "Wifi Adicionado";
 $log = "INSERT INTO logs(hora, ip, usuario, visita) VALUES ('$hora', '$ip', '$login', '$visita')";
 $log2 = mysqli_query($conn, $log);
 
-$dadoswifi = "INSERT INTO wifi(nome, setorleito, aparelho, data) VALUES ('$nome', '$setorleito', '$aparelho', NOW())";
+$dadoswifi = "INSERT INTO wifi(nome, setor, predio, data) VALUES ('$nome', '$setor', '$predio', NOW())";
 $dadowifi = mysqli_query($conn, $dadoswifi)
 ?>
 
@@ -41,10 +41,10 @@ $dadowifi = mysqli_query($conn, $dadoswifi)
         <div class="total">
             <div class="inicial">
             <?php include("session.php"); ?>
-                <h3>Wifi Cadastrado com Sucesso!</h3>
+                <h3>Ramal Cadastrado com Sucesso!</h3>
                 <img src="../imagens/logo.png" alt="Logo Cérebro">
                 <form>
-                    <a href="visualizarWifi.php"><input type="button" value="Ver Lista Wifi" class="botao"></a>
+                    <a href="visualizarWifi.php"><input type="button" value="Ver Lista Ramais" class="botao"></a>
                     <a href="cadastrarWifi.php"><input type="button" value="Cadastrar Novamente" class="botao"></a>
                 </form>
             </div>

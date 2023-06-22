@@ -24,7 +24,7 @@ if($logged != true){
     <?php include("session.php"); ?>
         <img src="imagens/logo.png"/>
         <h3>Escolha uma das opções</h3>
-        <a href="wifi/visualizarWifi.php"><input type="button" value="Lista de Wifi" class="botao"></a>
+        <a href="wifi/visualizarWifi.php"><input type="button" value="Lista de Ramais" class="botao"></a>
         <a href="chamadosExt/visualizarChamadosExt.php"><input type="button" value="Chamados Externos" class="botao"></a>
         <a href="ocorrencias/visualizarOcorrencias.php"><input type="button" value="Tarefas" class="botao"></a>
         <a href="http://intranet.iec.net/estoque/visualizar.php"><input type="button" value="Estoque" class="botao"></a>
