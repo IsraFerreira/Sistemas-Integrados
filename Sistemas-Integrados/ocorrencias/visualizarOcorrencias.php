@@ -148,7 +148,7 @@ while ($registro = mysqli_fetch_array($resultado))
 	echo "<h1>Ultimo Parecer: $rdataUltimoParecer</h1> ";
 
 	echo "<a href='inserirParecer.php?id=".$rid."&descricao=".$rdescricao."&desDetalhada=".$rdesDetalhada."&contatoEm=".$rcontatoEm."&resolvido=".$rresolvido."&dataCadastro=".$rdataCadastro."&dataResolvido=".$rdataResolvido."&dataUltimoParecer=".$rdataUltimoParecer."&cor=".$rcor."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
-	echo "<a href='apagarOcorrencia.php?id=".$rid."'><i class='fa-solid fa-trash' id='icone2'></i></a>";
+	 echo "<a href='DesejaExcluirPag.php?id=".$rid."'><i class='fa-solid fa-trash' id='icone2'></i></a>";
 	echo "</div>";
 
 }

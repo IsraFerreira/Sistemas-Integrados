@@ -79,11 +79,11 @@ $strcon = mysqli_connect($servidor, $usuario, $senha, $dbname) or die ('Erro ao 
 
 
 if($parametro=="ocorrenciaHoje"){
-$sql = "SELECT * from ocorrencias where cor like ('vermelho') OR contatoEm <= ('$hoje') AND resolvido like ('nao') order by contatoEm desc";
+$sql = "SELECT * from ocorrencias where cor like ('vermelho') OR contatoEm <= ('$hoje') AND resolvido like ('nao') order by contatoEm asc";
 $total_registros = "5000"; 
 }
 else if($parametro=="ocorrencia"){
-$sql = "SELECT * from ocorrencias where cor like ('amarelo') AND contatoEm > ('$hoje') order by contatoEm desc";
+$sql = "SELECT * from ocorrencias where cor like ('amarelo') AND contatoEm > ('$hoje') order by contatoEm asc";
 $total_registros = "5000";	
 }
 else if($parametro=="ocorrenciaSim"){
@@ -95,7 +95,7 @@ $sql = "SELECT * from ocorrencias where id like ('%$parametro%') or descricao li
 $total_registros = "5000";
 }
 else{
-	$sql = "SELECT * FROM ocorrencias order by contatoEm desc";
+	$sql = "SELECT * FROM ocorrencias order by resolvido asc, contatoEm asc";
 	$total_registros = "50";
 }
 
@@ -148,7 +148,7 @@ while ($registro = mysqli_fetch_array($resultado))
 	echo "<h1>Ultimo Parecer: $rdataUltimoParecer</h1> ";
 
 	echo "<a href='inserirParecer.php?id=".$rid."&descricao=".$rdescricao."&desDetalhada=".$rdesDetalhada."&contatoEm=".$rcontatoEm."&resolvido=".$rresolvido."&dataCadastro=".$rdataCadastro."&dataResolvido=".$rdataResolvido."&dataUltimoParecer=".$rdataUltimoParecer."&cor=".$rcor."'><i class='fa-solid fa-pen-to-square' id='icone1'></i></a>";
-	echo "<a href='apagarOcorrencia.php?id=".$rid."'><i class='fa-solid fa-trash' id='icone2'></i></a>";
+	 echo "<a href='DesejaExcluirPag.php?id=".$rid."'><i class='fa-solid fa-trash' id='icone2'></i></a>";
 	echo "</div>";
 
 }

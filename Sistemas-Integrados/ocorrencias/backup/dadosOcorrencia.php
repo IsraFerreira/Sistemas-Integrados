@@ -21,6 +21,7 @@ $visita = mysql_escape_string($visita);
 $visita = "Tarefa Adicionada";
 
 
+
 // Monta a query para inserir o log no sistema
 $log = "INSERT INTO logsOcorrencia(hora, ip, usuario, visita) VALUES ('$hora', '$ip', '$login', '$visita')";
 $log2 = mysqli_query($conn, $log);
