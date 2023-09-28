@@ -188,3 +188,27 @@ td > a > i {
   cursor: pointer;
   margin: 0px 10px;
 }
+
+.btn{
+  
+  float:right;
+
+}
+
+.VermelhoB{
+  width:15px;
+  height:15px;
+   background-color: red;
+ }
+
+ .AmareloB{
+   width:15px;
+  height:15px;
+   background-color: yellow;
+ }
+
+ .VerdeB{
+   width:15px;
+  height:15px;
+   background-color: green;
+ }

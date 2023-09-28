@@ -464,3 +464,19 @@ height:18px;
 
 .conteudo{
   margin: 2rem;}
+
+  .back{
+    margin: 1em 4em 0 0;
+    position: absolute;
+    width: 100px;
+    height: fit-content;
+    left: 5px;
+    padding: 3px;
+    z-index: 2;
+   
+  }
+ 
+  .back i{
+    color: #3477a7;
+    font-size: 40px;
+  }

@@ -20,6 +20,9 @@ if($logged != true){
 <body>
 	<div class="inicial">
 	<?php include("session.php"); ?>
+	<div class="back">
+             <a href="http://172.16.3.37/intranet/adm.php" class="icon"><i class="fa-solid fa-circle-arrow-left"></i></a>
+        </div>
 	<div class="btn">
 	    <form action="<?php echo $_SERVER['PHP_SELF']; ?>"><button class="VermelhoB" type="submit" name="parametro" value="ocorrenciaHoje"></button></form>
 
