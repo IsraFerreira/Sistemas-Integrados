@@ -25,18 +25,18 @@ if($logged != true){
 <table>
 	<tr>
 <td>
-<a href="escolha.php?escolha=1" class="linkImpressora">Janeiro 2022</a><br><br>
-<a href="escolha.php?escolha=2" class="linkImpressora">Fevereiro 2022</a><br><br>
-<a href="escolha.php?escolha=3" class="linkImpressora">Março 2022</a><br><br>
-<a href="escolha.php?escolha=4" class="linkImpressora">Abril 2022</a><br><br>
-<a href="escolha.php?escolha=5" class="linkImpressora">Maio 2022</a><br><br>
-<a href="escolha.php?escolha=6" class="linkImpressora">Junho 2022</a><br><br>
-<a href="escolha.php?escolha=7" class="linkImpressora">Julho 2022</a><br><br>
-<a href="escolha.php?escolha=8" class="linkImpressora">Agosto 2022</a><br><br>
-<a href="escolha.php?escolha=9" class="linkImpressora">Setembro 2022</a><br><br>
-<a href="escolha.php?escolha=10" class="linkImpressora">Outubro 2022</a><br><br>
-<a href="escolha.php?escolha=11" class="linkImpressora">Novembro 2022</a><br><br>
-<a href="escolha.php?escolha=12" class="linkImpressora">Dezembro 2022</a><br><br>
+<a href="escolha.php?escolha=1" class="linkImpressora">Janeiro 2024</a><br><br>
+<a href="escolha.php?escolha=2" class="linkImpressora">Fevereiro 2024</a><br><br>
+<a href="escolha.php?escolha=3" class="linkImpressora">Março 2024</a><br><br>
+<a href="escolha.php?escolha=4" class="linkImpressora">Abril 2024</a><br><br>
+<a href="escolha.php?escolha=5" class="linkImpressora">Maio 2024</a><br><br>
+<a href="escolha.php?escolha=6" class="linkImpressora">Junho 2024</a><br><br>
+<a href="escolha.php?escolha=7" class="linkImpressora">Julho 2024</a><br><br>
+<a href="escolha.php?escolha=8" class="linkImpressora">Agosto 2024</a><br><br>
+<a href="escolha.php?escolha=9" class="linkImpressora">Setembro 2024</a><br><br>
+<a href="escolha.php?escolha=10" class="linkImpressora">Outubro 2024</a><br><br>
+<a href="escolha.php?escolha=11" class="linkImpressora">Novembro 2024</a><br><br>
+<a href="escolha.php?escolha=12" class="linkImpressora">Dezembro 2024</a><br><br>
 </td>
 <td>
 <a href="escolha.php?escolha=13" class="linkImpressora">Janeiro 2023</a><br><br>

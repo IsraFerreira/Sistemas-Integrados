@@ -9,55 +9,55 @@ if($logged != true){
 
 
 $escolha = filter_input(INPUT_GET, 'escolha', FILTER_SANITIZE_STRING);
-$ano1 = 2022;
+$ano1 = 2024;
 $ano2 = 2023;
 
 if($escolha == 1){
-$tabela = '1janeiro2022';
+$tabela = '1janeiro2024';
 $ano = $ano1;
 $mes = 'janeiro';
 } else if($escolha == 2){
-$tabela = '2fevereiro2022';
+$tabela = '2fevereiro2024';
 $ano = $ano1;
 $mes = 'fevereiro';
 } else if($escolha == 3){
-  $tabela = '3marco2022';
+  $tabela = '3marco2024';
   $ano = $ano1;
   $mes = 'marco';
 } else if($escolha == 4){
-  $tabela = '4abril2022';
+  $tabela = '4abril2024';
   $ano = $ano1;
   $mes = 'abril';
   } else if($escolha == 5){
-    $tabela = '5maio2022';
+    $tabela = '5maio2024';
     $ano = $ano1;
     $mes = 'maio';
     } else if($escolha == 6){
-      $tabela = '6junho2022';
+      $tabela = '6junho2024';
       $ano = $ano1;
       $mes = 'junho';
       } else if($escolha == 7){
-        $tabela = '7julho2022';
+        $tabela = '7julho2024';
         $ano = $ano1;
         $mes = 'julho';
         } else if($escolha == 8){
-          $tabela = '8agosto2022';
+          $tabela = '8agosto2024';
           $ano = $ano1;
           $mes = 'agosto';
           } else if($escolha == 9){
-            $tabela = '9setembro2022';
+            $tabela = '9setembro2024';
             $ano = $ano1;
             $mes = 'setembro';
             } else if($escolha == 10){
-              $tabela = '10outubro2022';
+              $tabela = '10outubro2024';
               $ano = $ano1;
               $mes = 'outubro';
               } else if($escolha == 11){
-                $tabela = '11novembro2022';
+                $tabela = '11novembro2024';
                 $ano = $ano1;
                 $mes = 'novembro';
                 } else if($escolha == 12){
-                  $tabela = '12dezembro2022';
+                  $tabela = '12dezembro2024';
                   $ano = $ano1;
                   $mes = 'dezembro';
                   } else if($escolha == 13){
